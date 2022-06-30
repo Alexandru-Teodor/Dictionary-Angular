@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ciorna';
+  title = 'Dictionary-Angular';
+  words:string[] = [];
+  regex:RegExp = /^[a-z0-9\s-!]+$/;
+
+  getVal(value:string) {
+    value = value.toLowerCase();
+    if(value.length > 0 && this.regex.test(value) ){
+      if (this.words.includes(value) == false){
+          this.words.push(value);
+          this.words.sort();
+      }
+    }
+  }
 }

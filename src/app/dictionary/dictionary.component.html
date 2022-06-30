@@ -1,0 +1,6 @@
+<div>
+    <input type="text" #search placeholder="Search for a word" (keyup.enter)="searchWord(search.value)" (keyup.enter)="search.value = ''">
+    <button (click)="searchWord(search.value)" (click)="search.value = ''">Search</button>
+    <p>{{status}}</p>
+    <li *ngFor="let value of item; index as i;">{{value}}</li> 
+</div>
