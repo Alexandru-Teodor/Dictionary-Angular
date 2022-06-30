@@ -12,11 +12,13 @@ export class DictionaryComponent implements OnInit {
   @Input() item:string[] = [];
 
   searchWord(word:string) {
-    if (this.item.includes(word)) {
-      this.status = `The word "${word}" exists in the dictionary.`;
-    }
-    else {
-      this.status = `The word "${word}" is not in the dictionary.`
+    if (word.length > 0) {
+      if (this.item.includes(word)) {
+        this.status = `The word "${word}" exists in the dictionary.`;
+      }
+      else {
+        this.status = `The word "${word}" is not in the dictionary.`
+      }
     }
   }
 
